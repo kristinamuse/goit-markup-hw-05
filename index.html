@@ -51,9 +51,20 @@
         <section class="hero">
             <div>
                 <h1 class="hero-title">Ефективні рішення <br> для вашого бізнесу</h1>
-                <button type="button" class="button">Замовити послугу</button>
+                <button type="button" class="button" data-modal-open>Замовити послугу</button>
             </div>
         </section>
+
+        <!-- Modal window -->
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                    <button type="button" class="modal-button" data-modal-close>
+                        <svg class="modai-icon" width="18" height="18">
+                            <use href="./images/sprite.svg#icon-close"></use>
+                        </svg>
+                    </button>
+            </div>
+        </div>
         
         <!--Advantages-->
         <section class="advantages">
@@ -105,21 +116,30 @@
             <div class="container">
                 <h2 class="title">Чим ми займаємось</h2>
                 <ul class="list images-list">
-                    <li class="item">
-                        <a href="">
-                            <img src="./images/box-1.jpg" alt="Людина друкує текст на клавіатурі" width="370" height="294">
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <img src="./images/box-2.jpg" alt="Людина працює на телефоні" width="370" height="294">
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="">
-                            <img src="./images/box-3.jpg" alt="Людина працює на планшеті" width="370" height="294">
-                        </a>
-                    </li>
+                        <li class="item work-thumb">
+                                <a href="">
+                                    <img src="./images/box-1.jpg" alt="Людина друкує текст на клавіатурі" width="370" height="294">
+                                </a>
+                                <div class="work-kind">
+                                    <p class="work-text">Десктопні програми</p>
+                                </div>
+                        </li>
+                        <li class="item work-thumb">
+                                <a href="">
+                                    <img src="./images/box-2.jpg" alt="Людина працює на телефоні" width="370" height="294">
+                                </a>
+                                <div class="work-kind">
+                                    <p class="work-text">Мобільні додатки</p>
+                                </div>
+                        </li>
+                        <li class="item work-thumb">
+                                <a href="">
+                                    <img src="./images/box-3.jpg" alt="Людина працює на планшеті" width="370" height="294">
+                                </a>
+                                <div class="work-kind">
+                                    <p class="work-text">Дизайнерські рішення</p>
+                                </div>
+                        </li>
                 </ul>
             </div>
         </section>
@@ -388,5 +408,8 @@
             </div>
         </section>
     </footer>
+    
+    <!-- JS -->
+    <script src="./js/modal.js"></script>
 </body>
 </html>

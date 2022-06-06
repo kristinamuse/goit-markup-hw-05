@@ -86,6 +86,8 @@ img{
     font-size: 26px;
     line-height: 1.19;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo:hover{
@@ -130,6 +132,8 @@ img{
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .main-link.current{
@@ -156,6 +160,8 @@ img{
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -221,11 +227,12 @@ img{
     text-align: center;
     letter-spacing: 0.06em;
     cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
-    color:var(--primary-background-colour);
     background-color: #188CE8;
 }
 
@@ -236,6 +243,52 @@ img{
     line-height: 1.17;
     text-align: center;
     margin-bottom: 50px;
+}
+
+/* modal window */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.backdrop.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 528px;
+    min-height: 581px;
+
+    background-color:var(--primary-background-colour);
+}
+
+.modal-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: auto;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color:var(--primary-background-colour);
 }
 
 /* advantages */
@@ -316,6 +369,37 @@ img{
     margin-right: 0;
 }
 
+.work-thumb{
+    position: relative;
+}
+
+.work-kind{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(47, 48, 58, 0.8);
+    padding: 27px 0;
+    opacity: 0;
+
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-thumb:hover .work-kind,
+.work-thumb:focus .work-kind{
+    opacity: 1;
+}
+
+.work-text{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--primary-background-colour);
+}
+
 /* team */
 .team{
     background-color:var(--secondary-background-colour) ;
@@ -377,14 +461,16 @@ img{
     align-items: center;
     width: 44px;
     height: 44px;
+    border-radius: 50%;
     color: var(--primary-icon-colour);
+    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-link:hover,
 .team-link:focus{
     background-color: var(--accent-colour);
     color: var(--primary-background-colour);
-    border-radius: 50%;
 }
 
 .icon-team{
@@ -417,6 +503,8 @@ img{
     justify-content: center;
     align-items: center;
     color: var(--primary-icon-colour);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -467,6 +555,8 @@ img{
     font-size: 14px;
     line-height: 1.71;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -512,10 +602,13 @@ img{
     align-items: center;
     width: 44px;
     height: 44px;
+    border-radius: 50%;
     background-color: #FFFFFF1A;
     color: var(--primary-background-colour);
-    border-radius: 50%;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .socialmedia-link:hover,
 .socialmedia-link:focus{
     background-color: var(--accent-colour);
@@ -530,6 +623,8 @@ img{
 .projects-link{
     text-decoration: none;
     display: block;
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects-link:hover,
@@ -580,6 +675,11 @@ img{
     margin-top: 4px;
 }
 
+.button-list {
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
 .portfolio-buttons{
     display: inline-block;
     min-width: auto;
@@ -596,11 +696,8 @@ img{
     text-align: center;
     letter-spacing: 0.03em;
     cursor: pointer;
-}
 
-.button-list{
-    display: inline-block;
-    margin-bottom: 50px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-buttons:hover,
@@ -619,6 +716,46 @@ img{
     margin-right: 8px;
 }
 
+.card-thumb{
+    position: relative;
+}
+
+.card-thumb::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(33, 150, 243, 0.9);
+    opacity: 0;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-link:hover .card-thumb::before,
+.projects-link:hover .card-thumb::before{
+    opacity: 1;
+}
+
+.portfolio-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    line-height: 1.55;
+    padding: 63px 24px;
+    color: var(--primary-background-colour);
+    opacity: 0;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-link:hover .portfolio-text,
+.projects-link:focus .portfolio-text{
+    opacity: 1;
+}
 
 /* .item * {
     outline: 1px solid salmon;
