@@ -763,9 +763,10 @@ img{
 
 .portfolio-text {
     position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+
+    height: 100%;
     font-size: 18px;
     line-height: 1.55;
     padding: 0 24px;
